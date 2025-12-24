@@ -1,0 +1,22 @@
+Link to example codes:
+##########################################################
+Principles of Computing Part-2, Week-2
+https://py2.codeskulptor.org/#examples_recursion.py
+http://viz.codeskulptor.org/#poc_viz_recursion.py
+https://py2.codeskulptor.org/#poc_recurrence_examples.py
+https://py2.codeskulptor.org/#poc_recurrence_plot.py
+https://py2.codeskulptor.org/#examples_files.py
+https://py2.codeskulptor.org/#poc_binary_search.py
+
+##########################################################
+Principles of Computing Part-2, Week-3
+
+https://py2.codeskulptor.org/#examples_lambda.py
+https://py2.codeskulptor.org/#poc_tree.py
+https://py2.codeskulptor.org/#poc_arith_expression.py
+
+##########################################################
+Principles of Computing Part-2, Week-4
+
+https://py2.codeskulptor.org/#poc_fifteen_template.py
+https://py2.codeskulptor.org/#poc_invariants.py
