@@ -1,1 +1,1 @@
-Code snippets I wrote while learning Python
+Python practice code written by me
