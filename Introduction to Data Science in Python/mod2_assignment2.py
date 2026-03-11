@@ -46,20 +46,22 @@ import pandas as pd
 
 def average_influenza_doses():
     df = pd.read_csv('assets/NISPUF17.csv', index_col=0)
-    df.fillna(0, inplace=True) #replace nan by 0
+    #df.fillna(0, inplace=True) #replace nan by 0
     
     #print(df['CBF_01'].unique()) #[ 1  2 99 77] yes, no, dont know, missing
     #print(df['P_NUMFLU'].unique()) #[nan  3.  0.  2.  1.  4.  5.  6.] floating point type
     #print(df['P_NUMFLU'].head())
     
+    new_df=df[df['P_NUMFLU'] >= 0]
+    #print(len(new_df))
     #rcvd brstmilk
-    rcvd_brstmlk_df=df[df['CBF_01'] == 1]
+    rcvd_brstmlk_df=new_df[new_df['CBF_01'] == 1]
     num_child_rcvd_brstmlk = rcvd_brstmlk_df.shape[0]
     num_inf_vacc=rcvd_brstmlk_df['P_NUMFLU'].sum()
     
     
     #did not rcv brstmilk
-    no_brstmlk_df=df[df['CBF_01'] == 2]
+    no_brstmlk_df=new_df[new_df['CBF_01'] == 2]
     num_child_no_brstmlk=no_brstmlk_df.shape[0]
     num_inf_vacc1=no_brstmlk_df['P_NUMFLU'].sum()
     #print(no_brstmlk_df['CBF_01'].head())
@@ -69,7 +71,7 @@ def average_influenza_doses():
     # YOUR CODE HERE
     raise NotImplementedError()
     
-#print(average_influenza_doses())
+print(average_influenza_doses())
 
 Question3:
 
@@ -126,12 +128,17 @@ def corr_chickenpox():
     
     # YOUR CODE HERE
     df = pd.read_csv('assets/NISPUF17.csv', index_col=0)
-    df.fillna(0, inplace=True)
-    corr, pval=stats.pearsonr(df["HAD_CPOX"],df["P_NUMVRC"])
+    #df.fillna(0, inplace=True)
+    
+    new_df=df[df['HAD_CPOX'] <=2]
+    new_df=new_df[new_df['P_NUMVRC'] >= 0]
+    #df.sort_index(inplace=True)
+    #print(len(new_df))
+    corr, pval=stats.pearsonr(new_df["HAD_CPOX"],new_df["P_NUMVRC"])
     
     return corr
     
     raise NotImplementedError()
 
-#print(corr_chickenpox()) 
+print(corr_chickenpox()) 
 
